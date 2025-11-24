@@ -29,16 +29,17 @@ int main(){
         int sn = NumInRange(0, 10);
         int guess;
         int victory;
-        while (i != 3) {
+        while (i < 3) {
             printf ("Guess the Number (0 to 10): ");
             scanf ("%d", &guess);
-            i++;
             if (guess == sn) {
                 printf("You Won!\n");
                 victory = 1;
-            } else {
+                i = 3;
+            } else if (i < 2) {
                 printf("Retry!\n");
             }
+            i++;
         }
         if (victory != 1){
         printf ("You lost!\n");
