@@ -25,19 +25,20 @@ int main(){
         printf("You lost!\n");
     }
     } else {
-        int i = 1;
+        int i = 0;
         int sn = NumInRange(0, 10);
         int guess;
         while (i != 3) {
-        printf ("Guess the Number (0 to 10): ");
-        scanf ("%d", &guess);
-        i++;
+            printf ("Guess the Number (0 to 10): ");
+            scanf ("%d", &guess);
+            i++;
+            if (guess == sn) {
+                printf("You Won!\n");
+            } else {
+                printf("Retry!\n");
+            }
         }
-    if (guess == sn) {
-        printf("You Won!\n");
-    } else {
-        printf("You lost!\n");
-    }
+        printf ("You lost!\n");
     }
     return 0;
 }
