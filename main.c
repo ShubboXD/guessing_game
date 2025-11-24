@@ -10,25 +10,29 @@ int main(){
     srand(time(NULL));
     int option;
     printf ("Choose one: \n");
-    printf ("1. Guess between 0 to 10\n");
-    printf ("2. Guess between 0 or 1\n");
+    printf ("1. Guess between 0 to 10 (3 tries)\n");
+    printf ("2. Guess between 0 or 1 (1 try)\n");
     printf ("1 or 2: ");
     scanf ("%d", &option);
     if (option == 2) {
-    int sn = NumInRange(0, 1);
-    int guess;
-    printf ("Guess the Number (0 or 1): ");
-    scanf ("%d", &guess);
+        int sn = NumInRange(0, 1);
+        int guess;
+        printf ("Guess the Number (0 or 1): ");
+        scanf ("%d", &guess);
     if (guess == sn) {
         printf("You Won!\n");
     } else {
         printf("You lost!\n");
     }
     } else {
-    int sn = NumInRange(0, 10);
-    int guess;
+        int i = 1;
+        int sn = NumInRange(0, 10);
+        int guess;
+        while (i != 3) {
         printf ("Guess the Number (0 to 10): ");
-    scanf ("%d", &guess);
+        scanf ("%d", &guess);
+        i++;
+        }
     if (guess == sn) {
         printf("You Won!\n");
     } else {
